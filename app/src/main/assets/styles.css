@@ -55,3 +55,44 @@
 .nav .nav-add .navico{top:-11px;width:46px;height:46px;border-width:2.5px;font-size:26px;margin-bottom:-7px}
 .page-head{padding:18px 18px 14px;font-size:22px}
 .discover-head{height:100px;padding-top:20px;font-size:22px}
+
+/* ===================== 可调参数区 =====================
+   只改下面这几行，保存后刷新右侧预览即可看到效果。
+   顶部：hero 高度主要由 padding 的上下值决定。
+   底部：nav 的 height 是导航栏高度，padding 的左右值是收窄/放宽间距。
+   中间按钮：width / height 控制黄色圆圈大小，top 控制向上凸出的程度。
+====================================================== */
+/* 顶部黄色栏 */
+.home-page .hero{padding:12px 18px 12px}
+.home-page .brand{font-size:18px}
+.home-page .month{font-size:34px}
+/* 底部导航栏 */
+.nav{height:42px;padding:0 30px 4px}
+.nav button{font-size:10px}
+.nav .navico{font-size:18px}
+/* 中间黄色圆形加号 */
+.nav .nav-add .navico{top:-11px;width:46px;height:46px;font-size:26px}
+
+/* ===================== 统一调节区（所有页面） =====================
+   只改这里：顶部四类页面标题会一起变化，底部四个图标也会保持同一盒子尺寸。
+================================================================== */
+:root{
+  --top-pad-y:12px;
+  --top-pad-x:18px;
+  --top-title-size:22px;
+  --top-brand-size:18px;
+  --top-icon-size:25px;
+  --bottom-icon-box:24px;
+  --bottom-icon-size:18px;
+}
+/* 顶部统一：明细、账单、发现、我的；图表标题也跟随同一字号 */
+.home-page .hero{padding:var(--top-pad-y) var(--top-pad-x)}
+.home-page .brand{font-size:var(--top-brand-size)}
+.page-head,.discover-head{font-size:var(--top-title-size);padding-top:var(--top-pad-y);padding-bottom:var(--top-pad-y)}
+.chart-head{padding-top:var(--top-pad-y);padding-bottom:var(--top-pad-y)}
+.chart-title{font-size:var(--top-title-size)}
+/* 底部四个普通图标使用相同尺寸、行高和对齐盒 */
+.nav button:not(.nav-add){display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:2px}
+.nav button:not(.nav-add) .navico{width:var(--bottom-icon-box);height:var(--bottom-icon-box);display:grid;place-items:center;font-size:var(--bottom-icon-size);line-height:1;margin:0 auto}
+.nav button:not(.nav-add) .navico svg{width:22px;height:22px;display:block;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.nav button:not(.nav-add) .nav-label{line-height:1;font-size:10px}
