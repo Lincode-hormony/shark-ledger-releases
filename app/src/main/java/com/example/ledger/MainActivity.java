@@ -13,9 +13,15 @@ import android.webkit.WebViewClient;
 import android.webkit.JavascriptInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.app.DownloadManager;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.IntentFilter;
+import android.os.Environment;
 
 public class MainActivity extends Activity {
     private WebView webView;
+    private BroadcastReceiver updateReceiver;
     @Override public void onCreate(Bundle state) {
         super.onCreate(state);
         getWindow().setStatusBarColor(Color.rgb(255, 218, 62));
@@ -32,7 +38,13 @@ public class MainActivity extends Activity {
         webView.setWebViewClient(new WebViewClient());
         webView.addJavascriptInterface(new Object() {
             @JavascriptInterface public void startUpdate(String url) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+                DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+                request.setTitle("鲨鱼记账更新");
+                request.setDescription("正在下载新版本");
+                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                request.setDestinationInExternalFilesDir(MainActivity.this, Environment.DIRECTORY_DOWNLOADS, "shark-ledger-update.apk");
+                DownloadManager manager = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+                manager.enqueue(request);
             }
         }, "AndroidBridge");
         WebSettings settings = webView.getSettings();
@@ -76,6 +88,28 @@ public class MainActivity extends Activity {
         webView.loadUrl("file:///android_asset/index.html");
         setContentView(root);
         getWindow().getDecorView().requestApplyInsets();
+        updateReceiver = new BroadcastReceiver() {
+            @Override public void onReceive(Context context, Intent intent) {
+                if (!DownloadManager.ACTION_DOWNLOAD_COMPLETE.equals(intent.getAction())) return;
+                long id = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1);
+                DownloadManager manager = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+                Uri apk = manager.getUriForDownloadedFile(id);
+                if (apk == null) return;
+                Intent install = new Intent(Intent.ACTION_VIEW, apk);
+                install.setDataAndType(apk, "application/vnd.android.package-archive");
+                install.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(install);
+            }
+        };
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            registerReceiver(updateReceiver, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE), Context.RECEIVER_EXPORTED);
+        } else {
+            registerReceiver(updateReceiver, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+        }
+    }
+    @Override protected void onDestroy() {
+        if (updateReceiver != null) unregisterReceiver(updateReceiver);
+        super.onDestroy();
     }
     @Override public void onBackPressed() {
         if (webView == null) { super.onBackPressed(); return; }
