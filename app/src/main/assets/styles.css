@@ -33,3 +33,25 @@
 .day-picker{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:18px;max-height:310px;overflow:auto}
 .day-option{height:38px;border:1px solid #e7e7e7;border-radius:9px;background:#fafafa;color:#555;font-size:14px}
 .day-option.selected{background:var(--yellow);border-color:#333;color:#222;font-weight:500}
+
+/* Compact proportions matching the supplied reference. */
+.app{padding-bottom:62px}
+.home-page .hero{padding:12px 18px 12px;border-radius:0 0 20px 20px}
+.home-page .topline{min-height:25px}
+.home-page .brand{font-size:18px;font-weight:500}
+.home-page .avatar{width:25px;height:25px;border-width:1.5px;font-size:13px}
+.home-page .year{margin-top:8px;font-size:12px}
+.home-page .monthrow{gap:6px;margin-top:1px}
+.home-page .month{font-size:34px}
+.home-page .month small{font-size:14px;margin-left:2px}
+.home-page .down{font-size:12px}
+.home-page .total{min-width:58px}
+.home-page .total label{font-size:11px}
+.home-page .total strong{font-size:18px}
+.nav{height:58px;padding:0 30px 4px}
+.nav button{width:18%;font-size:10px}
+.nav .navico{font-size:18px;margin-bottom:2px}
+.nav .nav-add{width:25%}
+.nav .nav-add .navico{top:-11px;width:46px;height:46px;border-width:2.5px;font-size:26px;margin-bottom:-7px}
+.page-head{padding:18px 18px 14px;font-size:22px}
+.discover-head{height:100px;padding-top:20px;font-size:22px}
