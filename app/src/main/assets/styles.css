@@ -81,7 +81,10 @@
   --top-pad-x:18px;
   --top-title-size:22px;
   --top-brand-size:18px;
+  --top-discover-height:100px;
   --top-icon-size:25px;
+  --bottom-nav-height:58px;
+  --bottom-nav-side-padding:30px;
   --bottom-icon-box:24px;
   --bottom-icon-size:18px;
 }
@@ -89,8 +92,10 @@
 .home-page .hero{padding:var(--top-pad-y) var(--top-pad-x)}
 .home-page .brand{font-size:var(--top-brand-size)}
 .page-head,.discover-head{font-size:var(--top-title-size);padding-top:var(--top-pad-y);padding-bottom:var(--top-pad-y)}
+.discover-head{height:var(--top-discover-height)}
 .chart-head{padding-top:var(--top-pad-y);padding-bottom:var(--top-pad-y)}
 .chart-title{font-size:var(--top-title-size)}
+.nav{height:var(--bottom-nav-height);padding:0 var(--bottom-nav-side-padding) 4px}
 /* 底部四个普通图标使用相同尺寸、行高和对齐盒 */
 .nav button:not(.nav-add){display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:2px}
 .nav button:not(.nav-add) .navico{width:var(--bottom-icon-box);height:var(--bottom-icon-box);display:grid;place-items:center;font-size:var(--bottom-icon-size);line-height:1;margin:0 auto}
