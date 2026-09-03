@@ -1,11 +1,11 @@
 (function () {
   const STORAGE_KEY = 'ledger-state-v4';
-  const APP_VERSION = '1.0.4';
+  const APP_VERSION = '1.0.5';
   const UPDATE_REPO = 'Lincode-hormony/shark-ledger-releases';
   const expenseCategories = { 餐饮: '🍴', 购物: '🛍️', 日用: '🧻', 交通: '🚌', 蔬菜: '🥕', 水果: '🍒', 零食: '🧁', 运动: '🚲', 娱乐: '🎤', 通讯: '☎', 服饰: '👕', 美容: '💄', 住房: '⌂', 居家: '🛋', 孩子: '♙', 长辈: '♙' };
   const incomeCategories = { 工资: '💼', 奖金: '🎁', 兼职: '🧰', 红包: '🧧', 理财收益: '📈', 报销: '🧾', 转账: '💴', 其他收入: '＋' };
   const randomIcons = ['✦', '★', '◆', '●', '☘', '☀', '♣', '♫', '✚', '◇', '◌', '▣'];
-  const storedState = localStorage.getItem(STORAGE_KEY) || localStorage.getItem('ledger-state-v3') || localStorage.getItem('ledger-state-v2');
+  const storedState = localStorage.getItem(STORAGE_KEY) || localStorage.getItem('ledger-state-v3') || localStorage.getItem('ledger-state-v2') || localStorage.getItem('ledger-state-v1');
   const state = JSON.parse(storedState || 'null') || { budget: 0, cycleDay: 9, entries: [], customCategories: { expense: [], income: [] } };
   state.entries = Array.isArray(state.entries) ? state.entries : [];
   state.customCategories = state.customCategories || { expense: [], income: [] };
