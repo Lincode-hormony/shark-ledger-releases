@@ -1,5 +1,5 @@
 plugins { id 'com.android.application' }
 
 android { namespace 'com.example.ledger'; compileSdk 36; buildToolsVersion '36.0.0'
-    defaultConfig { applicationId 'com.example.ledger'; minSdk 23; targetSdk 36; versionCode 7; versionName '1.0.7' }
+    defaultConfig { applicationId 'com.example.ledger'; minSdk 23; targetSdk 36; versionCode 8; versionName '1.0.8' }
 }
