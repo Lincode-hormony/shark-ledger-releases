@@ -17,3 +17,19 @@
 .home-page .hero{padding:16px 20px 15px}.home-page .brand{font-size:20px}.home-page .avatar{width:28px;height:28px}.home-page .month{font-size:40px}.home-page .total strong{font-size:22px}.home-page .empty{padding:65px 0}.card{border-radius:12px;padding:14px;margin:12px 18px}.page-head{padding:24px 18px 18px}.discover-head{height:118px;padding-top:24px}.discover-card{margin:0 18px 12px;padding:14px 16px}.discover-card .card-title{font-size:20px}.budget-card{gap:16px}.ring{width:118px;height:118px}.settings-card{margin:12px 18px;padding:14px 16px}.settings-title{font-size:19px}.settings-row{padding:12px 0;font-size:15px}.settings-value,.settings-cycle{font-size:13px}.entry-screen .add-head{height:88px;flex-basis:88px;font-size:20px}.entry-screen .category-grid{padding:18px 16px 28px;gap:18px 6px}.entry-screen .category-btn span{width:44px;height:44px;font-size:18px}.number-drawer .key{height:55px;font-size:18px}.number-drawer .amount-display{font-size:34px}.number-drawer .note-input,.number-drawer .note-input input{font-size:14px}
 .chart-page{padding-bottom:62px}.chart-head{padding:18px 16px 11px}.chart-title{font-size:20px}.chart-tabs{margin-top:12px}.chart-tabs button{font-size:15px;padding:5px}.chart-period{height:42px;font-size:12px}.chart-summary{padding:11px 16px 4px;font-size:15px}.line-chart{height:190px;margin-top:4px}.line-chart svg{inset:6px 0 22px;height:158px}.chart-labels{font-size:10px}.ranking{padding:14px 16px 78px}.ranking h2{font-size:19px;margin-bottom:11px}.rank-row{gap:8px;margin:10px 0}.rank-icon{width:33px;height:33px;font-size:16px}.rank-body>div:first-child{gap:6px;font-size:14px}.rank-body em,.rank-body strong{font-size:12px}.rank-bar{height:5px;margin-top:4px}.nav{height:58px;padding:0 32px 4px}.nav button{font-size:10px}.nav .navico{font-size:18px}.nav .nav-add .navico{font-size:28px}
 .app{padding-bottom:78px}.nav{height:76px;padding:0 18px 8px;align-items:end}.nav button{width:20%;font-size:14px}.nav .navico{font-size:26px;margin-bottom:4px}.nav .nav-add .navico{font-size:38px}.nav-label{line-height:1.1}.home-page .hero{padding-bottom:18px}
+
+/* Final navigation treatment: compact tabs with the raised yellow add button from the reference. */
+.app{padding-bottom:70px}
+.nav{height:70px;padding:0 24px 7px;align-items:end}
+.nav button{width:19%;font-size:12px;line-height:1.15}
+.nav .navico{font-size:21px;margin-bottom:3px;line-height:1}
+.nav .nav-add{width:24%;position:relative}
+.nav .nav-add .navico{position:relative;top:-13px;width:52px;height:52px;margin:0 auto -7px;border-radius:50%;display:grid;place-items:center;background:var(--yellow);border:3px solid #fff;box-shadow:0 0 0 1px rgba(70,70,70,.2),0 4px 12px rgba(0,0,0,.16);font-size:30px;font-weight:300;line-height:1;color:#333}
+.nav .nav-add:active .navico{transform:scale(.96)}
+.nav .nav-add .nav-label{display:none}
+
+.budget-discover{cursor:pointer}
+.settlement-sheet{padding-bottom:24px}
+.day-picker{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:18px;max-height:310px;overflow:auto}
+.day-option{height:38px;border:1px solid #e7e7e7;border-radius:9px;background:#fafafa;color:#555;font-size:14px}
+.day-option.selected{background:var(--yellow);border-color:#333;color:#222;font-weight:500}
