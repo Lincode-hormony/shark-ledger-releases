@@ -13,7 +13,7 @@
   state.customCategories.income = state.customCategories.income || [];
   state.cycleDay = Math.min(31, Math.max(1, Number(state.cycleDay || 9)));
   const today = new Date(); today.setHours(12, 0, 0, 0);
-  let page = 'home'; let chartMode = 'month'; let billMode = 'year'; let entryType = 'expense';
+  let page = 'home'; let chartMode = 'month'; let billMode = 'month'; let entryType = 'expense';
   const money = value => Number(value || 0).toFixed(2);
   const dateObj = value => new Date(value + 'T12:00:00');
   const dateKey = date => date.toISOString().slice(0, 10);
