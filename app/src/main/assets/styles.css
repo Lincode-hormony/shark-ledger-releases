@@ -124,3 +124,23 @@
 .bill-row b{font-size:24px;font-weight:500}
 .bill-row .arrow{font-size:34px;color:#ccc}
 @media (max-width:700px){.bill-toolbar{padding-left:20px;padding-right:20px;gap:8px}.bill-year{font-size:18px}.bill-switch button{font-size:17px;padding:5px 6px}.bill-summary{margin:42px 20px 60px;padding:32px 34px 30px;border-radius:24px}.summary-label{font-size:20px}.bill-summary>strong{font-size:40px}.summary-stats{gap:28px;margin-top:34px;font-size:17px;position:relative;z-index:1}.summary-stats b{font-size:20px}.summary-mark{right:20px;font-size:110px}.bill-table{padding:0 20px}.bill-columns,.bill-row{grid-template-columns:1.1fr 1fr 1fr 1fr 18px;padding-left:12px;padding-right:12px}.bill-columns{font-size:15px}.bill-row{min-height:68px;font-size:15px}.bill-row b{font-size:18px}.bill-row .arrow{font-size:26px}}
+
+/* 账单页沿用全局紧凑比例，避免单独页面再次变大 */
+.bill-page{padding-bottom:62px}
+.bill-toolbar{height:70px;padding:16px 18px 8px;gap:10px}
+.bill-year{font-size:18px}
+.bill-year span{font-size:13px}
+.bill-switch{height:34px;border-width:1.5px;border-radius:11px}
+.bill-switch button{font-size:16px;padding:3px 8px}
+.bill-summary{margin:34px 18px 54px;padding:28px 28px 24px;border-radius:20px}
+.summary-label{font-size:18px;margin-bottom:10px}
+.bill-summary>strong{font-size:36px}
+.summary-stats{gap:38px;margin-top:30px;font-size:15px}
+.summary-stats b{font-size:18px;margin-left:5px}
+.summary-mark{right:22px;top:12px;font-size:96px}
+.bill-table{padding:0 18px}
+.bill-columns,.bill-row{grid-template-columns:1.1fr 1fr 1fr 1fr 18px;padding-left:10px;padding-right:10px}
+.bill-columns{font-size:14px;padding-bottom:12px}
+.bill-row{min-height:62px;font-size:14px}
+.bill-row b{font-size:17px}
+.bill-row .arrow{font-size:25px}
