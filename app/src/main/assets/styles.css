@@ -110,7 +110,6 @@
 .bill-switch{flex:1;margin:0;height:44px;border:2px solid #272727;border-radius:14px;display:flex;overflow:hidden}
 .bill-switch button{flex:1;font-size:21px;padding:5px 12px}
 .bill-switch .selected{background:#272727;color:#fff}
-.bill-tools{width:120px;height:44px;border:1px solid #f1f1f1;border-radius:24px;display:flex;align-items:center;justify-content:center;gap:11px;font-size:22px;letter-spacing:1px;white-space:nowrap}
 .bill-tools i{height:26px;width:1px;background:#eee}
 .bill-summary{position:relative;margin:68px 38px 94px;padding:48px 72px 42px;background:#ffda3e;border-radius:30px;overflow:hidden}
 .summary-label{font-size:24px;margin-bottom:16px}
@@ -124,4 +123,4 @@
 .bill-row{min-height:92px;padding:0 24px;border-bottom:1px solid #eee;font-size:21px}
 .bill-row b{font-size:24px;font-weight:500}
 .bill-row .arrow{font-size:34px;color:#ccc}
-@media (max-width:700px){.bill-toolbar{padding-left:20px;padding-right:20px;gap:8px}.bill-year{font-size:18px}.bill-switch button{font-size:17px;padding:5px 6px}.bill-tools{width:84px;font-size:18px;gap:5px}.bill-summary{margin:42px 20px 60px;padding:32px 34px 30px;border-radius:24px}.summary-label{font-size:20px}.bill-summary>strong{font-size:40px}.summary-stats{gap:28px;margin-top:34px;font-size:17px;position:relative;z-index:1}.summary-stats b{font-size:20px}.summary-mark{right:20px;font-size:110px}.bill-table{padding:0 20px}.bill-columns,.bill-row{grid-template-columns:1.1fr 1fr 1fr 1fr 18px;padding-left:12px;padding-right:12px}.bill-columns{font-size:15px}.bill-row{min-height:68px;font-size:15px}.bill-row b{font-size:18px}.bill-row .arrow{font-size:26px}}
+@media (max-width:700px){.bill-toolbar{padding-left:20px;padding-right:20px;gap:8px}.bill-year{font-size:18px}.bill-switch button{font-size:17px;padding:5px 6px}.bill-summary{margin:42px 20px 60px;padding:32px 34px 30px;border-radius:24px}.summary-label{font-size:20px}.bill-summary>strong{font-size:40px}.summary-stats{gap:28px;margin-top:34px;font-size:17px;position:relative;z-index:1}.summary-stats b{font-size:20px}.summary-mark{right:20px;font-size:110px}.bill-table{padding:0 20px}.bill-columns,.bill-row{grid-template-columns:1.1fr 1fr 1fr 1fr 18px;padding-left:12px;padding-right:12px}.bill-columns{font-size:15px}.bill-row{min-height:68px;font-size:15px}.bill-row b{font-size:18px}.bill-row .arrow{font-size:26px}}
